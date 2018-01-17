@@ -12,10 +12,10 @@
 
         <div class="collapse navbar-collapse" id="forum-navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li>{{- link_to('discussions', '<span class="octicon octicon-comment-discussion"></span>', 'title': 'Discussions') -}}</li>
+                <li>{{- link_to('discussions', '<span class="octicon octicon-comment-discussion"></span> <span class="visible-xs-inline-block">Discussions</span>', 'title': 'Discussions') -}}</li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownSearch" role="button" aria-haspopup="true" aria-expanded="false" title="Search">
-                        <span class="octicon octicon-search"></span> <b class="caret"></b>
+                        <span class="octicon octicon-search"></span>  <span class="visible-xs-inline-block">Search</span> <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownSearch">
                         <li>
@@ -34,10 +34,10 @@
                         </li>
                     </ul>
                 </li>
-                <li>{{ link_to('activity', '<span class="octicon octicon-eye"></span>', 'title': 'Activity') }}</li>
+                <li>{{ link_to('activity', '<span class="octicon octicon-eye"></span> <span class="visible-xs-inline-block">Activity</span>', 'title': 'Activity') }}</li>
                 {%- if session.get('identity') -%}
                     <li class="notification-container">
-                        {{- link_to('notifications', '<span class="octicon octicon-globe"></span>', 'title': 'Notifications') -}}
+                        {{- link_to('notifications', '<span class="octicon octicon-globe"></span> <span class="visible-xs-inline-block">Notifications</span>', 'title': 'Notifications') -}}
                         {%- if notifications.has() -%}
                             <span class="notification-counter">{{ notifications.getNumber() }}</span>
                         {%- endif -%}
@@ -45,7 +45,7 @@
                 {%- endif -%}
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle categories-link" data-toggle="dropdown" id="dropdownCategories" role="button" aria-haspopup="true" aria-expanded="false" title="Categories">
-                        <span class="octicon octicon-list-unordered"></span> <b class="caret"></b>
+                        <span class="octicon octicon-list-unordered"></span>  <span class="visible-xs-inline-block">Categories</span> <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu categories-dropdown" aria-labelledby="dropdownCategories">
                         {%- cache "sidebar" -%}
@@ -71,10 +71,10 @@
 
                     </ul>
                 </li>
-                <li>{{ link_to('help', '<span class="octicon octicon-info"></span>', 'title': 'Help') }}</li>
+                <li>{{ link_to('help', '<span class="octicon octicon-info"></span> <span class="visible-xs-inline-block">Help</span> ', 'title': 'Help') }}</li>
                 {%- if session.get('identity') -%}
-                    <li>{{ link_to('settings', '<span class="octicon octicon-tools"></span>', 'title': 'Settings') }}</li>
-                    <li>{{ link_to('logout', '<span class="octicon octicon-sign-out"></span>', 'title': 'Logout') }}</li>
+                    <li>{{ link_to('settings', '<span class="octicon octicon-tools"></span>  <span class="visible-xs-inline-block">Settings</span> ', 'title': 'Settings') }}</li>
+                    <li>{{ link_to('logout', '<span class="octicon octicon-sign-out"></span> <span class="visible-xs-inline-block">Logout</span>', 'title': 'Logout') }}</li>
                 {%- endif -%}
             </ul>
             {{ partial("partials/buttons", ["config": this.config]) }}
